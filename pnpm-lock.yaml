@@ -157,6 +157,9 @@ importers:
       '@pandacss/preset-panda':
         specifier: workspace:*
         version: link:../preset-panda
+      '@pandacss/shared':
+        specifier: workspace:*
+        version: link:../shared
       '@pandacss/types':
         specifier: workspace:*
         version: link:../types
@@ -470,6 +473,9 @@ importers:
       look-it-up:
         specifier: 2.1.0
         version: 2.1.0
+      microdiff:
+        specifier: ^1.3.2
+        version: 1.3.2
       outdent:
         specifier: ' ^0.8.0'
         version: 0.8.0
@@ -588,8 +594,8 @@ importers:
         version: link:../types
     devDependencies:
       '@atlaskit/tokens':
-        specifier: 1.13.1
-        version: 1.13.1(react@16.14.0)
+        specifier: 1.29.0
+        version: 1.29.0(react@16.14.0)
 
   packages/preset-base:
     dependencies:
@@ -1701,16 +1707,16 @@ packages:
       '@babel/runtime': 7.23.2
     dev: true
 
-  /@atlaskit/tokens@1.13.1(react@16.14.0):
-    resolution: {integrity: sha512-Q6sAMbX5kQMNPOt71deN2pICf1hNlthScT0r1cHA9uPngVkhWmImDOkhoZdfvF7fhbjyHCrtcfyJF/O2xNvPKQ==}
+  /@atlaskit/tokens@1.29.0(react@16.14.0):
+    resolution: {integrity: sha512-VDSl6+HKwInNt9mHXO2M2wKlWDo9rCOFhcAbXD+V3z5AsM7ccjX7Dl9Z2H9lciV6o+pkS0FkdE83DfJVgCBiRg==}
     peerDependencies:
       react: ^16.8.0
     dependencies:
       '@atlaskit/ds-lib': 2.2.3(react@16.14.0)
       '@atlaskit/platform-feature-flags': 0.2.2
-      '@babel/runtime': 7.22.6
+      '@babel/runtime': 7.23.2
       '@babel/traverse': 7.23.2
-      '@babel/types': 7.22.5
+      '@babel/types': 7.23.0
       bind-event-listener: 2.1.1
       react: 16.14.0
     transitivePeerDependencies:
@@ -5569,13 +5575,6 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
     dev: false
-
-  /@babel/runtime@7.22.6:
-    resolution: {integrity: sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      regenerator-runtime: 0.13.11
-    dev: true
 
   /@babel/runtime@7.23.2:
     resolution: {integrity: sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==}
@@ -11042,7 +11041,7 @@ packages:
     engines: {node: '>=12'}
     dependencies:
       '@babel/code-frame': 7.22.13
-      '@babel/runtime': 7.22.15
+      '@babel/runtime': 7.23.2
       '@types/aria-query': 5.0.1
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -11056,7 +11055,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@babel/code-frame': 7.22.13
-      '@babel/runtime': 7.22.15
+      '@babel/runtime': 7.23.2
       '@types/aria-query': 5.0.1
       aria-query: 5.1.3
       chalk: 4.1.2
@@ -18403,7 +18402,7 @@ packages:
     peerDependencies:
       eslint: ^6.8.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      '@babel/runtime': 7.22.15
+      '@babel/runtime': 7.23.2
       '@testing-library/dom': 8.20.0
       eslint: 8.46.0
       requireindex: 1.2.0
@@ -23224,6 +23223,10 @@ packages:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
     engines: {node: '>= 0.6'}
 
+  /microdiff@1.3.2:
+    resolution: {integrity: sha512-pKy60S2febliZIbwdfEQKTtL5bLNxOyiRRmD400gueYl9XcHyNGxzHSlJWn9IMHwYXT0yohPYL08+bGozVk8cQ==}
+    dev: false
+
   /micromark-core-commonmark@1.1.0:
     resolution: {integrity: sha512-BgHO1aRbolh2hcrzL2d1La37V0Aoz73ymF8rAcKnohLy93titmv62E0gP8Hrx9PKcKrqCZ1BbLGbP3bEhoXYlw==}
     dependencies:
@@ -26934,6 +26937,7 @@ packages:
 
   /regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
+    dev: false
 
   /regenerator-runtime@0.14.0:
     resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
