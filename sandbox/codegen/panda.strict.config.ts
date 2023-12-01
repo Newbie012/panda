@@ -1,5 +1,23 @@
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig, defineRecipe, RecipeConfig } from '@pandacss/dev'
 import codegenPreset from './preset'
+import { RecipeConfig as CodegenRecipeConfig, RecipeVariantRecord } from './styled-system-strict/types'
+
+declare module '@pandacss/dev' {
+  export interface StyledRecipeConfig<T extends RecipeVariantRecord = RecipeVariantRecord>
+    extends CodegenRecipeConfig<T> {}
+}
+
+defineRecipe({ className: 'x', base: { fontSize: '2xlx' } })
+defineRecipe({ className: 'x', base: { borderRaidus: 'md' } })
+defineRecipe({ className: 'x', base: { borderRadius: 'md' } })
+
+export function defineSaferRecipe<T extends RecipeVariantRecord>(config: CodegenRecipeConfig<T>): RecipeConfig {
+  return config as RecipeConfig
+}
+
+defineSaferRecipe({ className: 'x', base: { fontSize: '2xl' } });
+defineSaferRecipe({ className: 'x', base: { fontZise: '2xl' } });
+defineSaferRecipe({ className: 'x', base: { fontSize: '2xlx' } });
 
 export default defineConfig({
   presets: ['@pandacss/dev/presets', codegenPreset],

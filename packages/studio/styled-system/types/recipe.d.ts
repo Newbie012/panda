@@ -85,9 +85,21 @@ interface RecipeConfigMeta {
   jsx?: Array<string | RegExp>
 }
 
-export interface RecipeConfig<T extends RecipeVariantRecord = RecipeVariantRecord>
-  extends RecipeDefinition<T>,
-    RecipeConfigMeta {}
+type IsEmptyInterface<T> = keyof T extends never ? true : false;
+
+export interface StyledRecipeConfig {}
+
+type DefaultRecipeConfig<T extends RecipeVariantRecord = RecipeVariantRecord> =
+  RecipeDefinition<T> & RecipeConfigMeta;
+
+export type RecipeConfig<T extends RecipeVariantRecord = RecipeVariantRecord> =
+    IsEmptyInterface<StyledRecipeConfig> extends true
+        ? DefaultRecipeConfig<T>
+        : StyledRecipeConfig;
+
+// export interface RecipeConfig<T extends RecipeVariantRecord = RecipeVariantRecord>
+//   extends RecipeDefinition<T>,
+//     RecipeConfigMeta {}
 
 /* -----------------------------------------------------------------------------
  * Recipe / Slot
