@@ -2,7 +2,7 @@ import { defineConfig, defineRecipe } from '@pandacss/dev'
 
 const someRecipe = defineRecipe({
   className: 'some-recipe',
-  base: { color: 'green', fontSize: '16px' },
+  base: { backgroundColor: "red" },
   variants: {
     size: { small: { fontSize: '14px' } },
   },

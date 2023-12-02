@@ -6,7 +6,7 @@ import { Badge, badge } from './Badge'
 import { AnotherButtonWithRegex, Button, ListedButton } from './Button'
 import { Card } from './Card'
 
-const SomeRecipe = panda('div', someRecipe)
+const Some = panda('div', someRecipe)
 
 const PrimaryButtonLike = panda('span', button, {
   dataAttr: true,
@@ -125,9 +125,9 @@ function App() {
         <div className={badge({ status: 'success' })}>Warning</div>
       </section>
 
-      <SomeRecipe size="small" color="red.400">
+      <Some size="small" color="red.400">
         config recipe compoundVariants overriding within styled, should be red.100
-      </SomeRecipe>
+      </Some>
     </div>
   )
 }
